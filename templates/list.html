@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if arg == 'ol' %}
+        <div>
+            {% set user_list = ['Ваня', 'Петя', 'Саша', 'Кирилл'] %}
+<ul>
+    {% for user in user_list %}
+    <li>{{ loop.index }} - {{ user }} {% if loop.first %} первый в очереди {% elif loop.last %} последний. {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+        </div>
+ {% else %}
+       <div><img src="/static/img/knite.jpg" alt="здесь должна была быть картинка, но не нашлась"></div>
+ {% endif %}
+{% endblock %}
